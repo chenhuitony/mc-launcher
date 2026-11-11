@@ -1,0 +1,21 @@
+# Pu 插件 API —— 作者 chenhuitony 的第二个 API
+# 位置：servers/Pu/chenhuitony/ops.yml
+# 同一作者可以有多个 API，用子目录区分
+
+author: chenhuitony
+api: health-check
+version: 1.0.0
+description: 启动后做一次外部健康检查并记录
+enabled: false          # 默认关闭，改成 true 即启用
+
+functions:
+  - id: ping-site
+    type: http
+    url: https://example.com/
+    method: GET
+    expect: 200
+
+  - id: notify
+    type: log
+    requires: [ping-site]
+    message: "健康检查完成"
