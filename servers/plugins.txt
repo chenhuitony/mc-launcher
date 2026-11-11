@@ -1,0 +1,18 @@
+# Paper 插件列表（每行一个）
+#
+# 三个插件来源，用前缀指定；不写前缀则自动探测
+#   luckperms                    -> 自动（Modrinth -> Hangar -> Spiget）
+#   modrinth:luckperms           -> 强制 Modrinth（插件 slug）
+#   hangar:作者/项目              -> 强制 Hangar，例如 hangar:William278/HuskHomes
+#   spiget:资源ID                 -> 强制 Spiget，例如 spiget:34315
+#   luckperms@5.5.71             -> 锁定版本（仅 Modrinth 生效）
+#
+# 常用插件示例（取消注释即可启用）：
+#
+# luckperms                      权限管理（Modrinth）
+# essentialsx                    基础指令套件（Modrinth）
+# worldedit                      创世神（Modrinth）
+# worldguard                     区域保护（Modrinth）
+# viaversion                     跨版本兼容（Modrinth）
+# hangar:William278/HuskHomes     回家插件（Hangar 示例）
+# spiget:34315                   Vault 经济接口（Spiget 示例）
