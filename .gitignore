@@ -1,0 +1,61 @@
+# 编译产物（只忽略顶层生成目录和 class 文件）
+/build/
+/com/
+*.class
+
+# 服务端运行数据：只保留 Pu API 示例和插件清单
+servers/*
+!servers/Pu/
+!servers/plugins.txt
+
+# 已下载的服务端 jar（体积大，运行时会自动下载）
+servers/*.jar
+servers/**/*.jar
+*.jar
+!mc-launcher.jar
+
+# 日志与临时文件
+*.log
+logs/
+tmp_chk/
+t_out.txt
+final*.txt
+pu_test*.txt
+at_out.txt
+rt_out.txt
+srv_bg.txt
+multi.txt
+v.txt
+jartest.txt
+paper_test.txt
+plugin_test*.txt
+e2e.txt
+
+# 临时测试脚本
+T.java
+T.class
+PT.java
+PT.class
+PT2.java
+PT2.class
+AT.java
+AT.class
+RT.java
+RT.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 本地/敏感配置
+*.local
+.env
