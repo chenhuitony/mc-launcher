@@ -1,0 +1,23 @@
+# 故意写错的示例，用于验证「先检查」会拦截
+# 位置：servers/Pu/chenhuitony/broken.yml
+
+author: chenhuitony
+api: broken-demo
+version: 0.1
+description: 这个 API 故意包含错误，检查阶段应拒绝执行
+
+functions:
+  # 错误1：type 不存在
+  - id: bad-type
+    type: teleport
+    message: "类型无效"
+
+  # 错误2：依赖了不存在的功能
+  - id: bad-dep
+    type: log
+    requires: [missing-function]
+    message: "依赖缺失"
+
+  # 错误3：http 缺少 url
+  - id: bad-http
+    type: http
