@@ -1,0 +1,37 @@
+# Pu 插件 API 示例 —— 作者 chenhuitony
+#
+# 文件位置：servers/Pu/chenhuitony.yml
+# 作者名必须与文件名的第一层一致（这里是 chenhuitony）
+#
+# 执行方式：启动器会先检查本文件，全部通过后再依次调用各功能
+
+author: chenhuitony
+api: welcome-kit
+version: 1.0.0
+description: 新玩家欢迎礼包与服务器信息播报
+enabled: true
+
+functions:
+  # 1) 启动时打印一条横幅
+  - id: banner
+    type: log
+    message: "欢迎来到本服务器，由 chenhuitony 提供支持"
+
+  # 2) 设置游戏规则（通过 RCON 执行原版指令）
+  #    注意：26.x 起 gamerule 名称改为下划线风格，旧版是 keepInventory
+  - id: set-rule
+    type: command
+    requires: [banner]
+    run: gamerule keep_inventory true
+
+  # 3) 设置白天并让时间流动
+  - id: set-time
+    type: command
+    requires: [banner]
+    run: time set day
+
+  # 4) 广播一条服务器公告
+  - id: broadcast
+    type: command
+    requires: [set-rule, set-time]
+    run: say 服务器已启动，祝大家游戏愉快！
